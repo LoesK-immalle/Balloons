@@ -26,9 +26,9 @@ namespace WpfApplication1
         {
             InitializeComponent();
 
-            for(var i = 0; i<100; i++)
+            for(var i = 0; i<666; i++)
             {
-                Balloon newBalloon = new Balloon(canvas, 20, 100);
+                Balloon newBalloon = new Balloon(canvas, 20);
                 balloons.Add(newBalloon);
             }
         }
