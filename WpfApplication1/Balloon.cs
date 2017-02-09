@@ -60,7 +60,9 @@ namespace WpfApplication1
             ellipse.Fill = new SolidColorBrush(Colors.Aquamarine);
 
             TxtBlck.Text = "Happy Birthday!";
-            TxtBlck.Margin = new Thickness(x + 10, y + 10, 0, 0);
+            TxtBlck.Height = diameter;
+            TxtBlck.Width = diameter;
+            TxtBlck.Margin = new Thickness(x + diameter / 4, y + diameter / 2, 0, 0);
             TxtBlck.FontSize = fontSize; 
 
             canvas.Children.Add(ellipse);
@@ -73,10 +75,11 @@ namespace WpfApplication1
             ellipse.Width = diameter;
             ellipse.Height = diameter;
 
-            fontSize = fontSize + 5;
+            fontSize = fontSize + 2;
             TxtBlck.Width = diameter;
             TxtBlck.Height = diameter;
             TxtBlck.FontSize = fontSize;
+            TxtBlck.Margin = new Thickness(x , y + diameter / 2, 0, 0);
         }
 
         public void Move()
@@ -84,7 +87,7 @@ namespace WpfApplication1
             y -= 10;
             ellipse.Margin = new Thickness(x, y, 0, 0);
 
-            TxtBlck.Margin = new Thickness(x, y, 0, 0);
+            TxtBlck.Margin = new Thickness(x, y + diameter / 2, 0, 0);
         }
 
     }
