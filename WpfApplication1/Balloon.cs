@@ -56,14 +56,15 @@ namespace WpfApplication1
             ellipse.Width = diameter;
             ellipse.Height = diameter;
             ellipse.Margin = new Thickness(x, y, 0, 0);
-            ellipse.Stroke = new SolidColorBrush(Colors.HotPink);
+            ellipse.Stroke = new SolidColorBrush(Colors.DeepPink);
             ellipse.Fill = new SolidColorBrush(Colors.Aquamarine);
 
             TxtBlck.Text = "Happy Birthday!";
             TxtBlck.Height = diameter;
             TxtBlck.Width = diameter;
             TxtBlck.Margin = new Thickness(x + diameter / 4, y + diameter / 2, 0, 0);
-            TxtBlck.FontSize = fontSize; 
+            TxtBlck.FontSize = fontSize;
+            TxtBlck.FontFamily = new FontFamily("Gigi");
 
             canvas.Children.Add(ellipse);
             canvas.Children.Add(TxtBlck);
