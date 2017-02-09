@@ -33,6 +33,16 @@ namespace WpfApplication1
             }
         }
 
+        public void InitializeBalloons()
+        {
+            canvas.Children.Clear();
+            for (var i = 0; i < 666; i++)
+            {
+                Balloon newBalloon = new Balloon(canvas, 20);
+                balloons.Add(newBalloon);
+            }
+        }
+
         private void growButton_Click(object sender, RoutedEventArgs e)
         {
             foreach(var b in balloons)
@@ -47,6 +57,11 @@ namespace WpfApplication1
             {
                 b.Move();
             }
+        }
+
+        private void initButton_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeBalloons();
         }
     }
 }
