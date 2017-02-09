@@ -19,6 +19,7 @@ namespace WpfApplication1
         private int diameter = 10;
 
         Ellipse ellipse = new Ellipse();
+        TextBlock TxtBlck = new TextBlock();
 
         static Random rndGen = new Random();
 
@@ -57,7 +58,11 @@ namespace WpfApplication1
             ellipse.Stroke = new SolidColorBrush(Colors.HotPink);
             ellipse.Fill = new SolidColorBrush(Colors.Aquamarine);
 
+            TxtBlck.Text = "Happy Birthday!";
+            TxtBlck.Margin = new Thickness(x, y, 0, 0);
+
             canvas.Children.Add(ellipse);
+            canvas.Children.Add(TxtBlck);
         }
 
         public void Grow()
@@ -65,12 +70,17 @@ namespace WpfApplication1
             diameter += 10;
             ellipse.Width = diameter;
             ellipse.Height = diameter;
+
+            TxtBlck.Width = diameter;
+            TxtBlck.Height = diameter;
         }
 
         public void Move()
         {
             y -= 10;
             ellipse.Margin = new Thickness(x, y, 0, 0);
+
+            TxtBlck.Margin = new Thickness(x, y, 0, 0);
         }
 
     }
