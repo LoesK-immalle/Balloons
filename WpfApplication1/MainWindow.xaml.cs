@@ -21,6 +21,7 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         List<Balloon> balloons = new List<Balloon>();
+        static Random rndGen = new Random();
 
         public MainWindow()
         {
@@ -28,7 +29,7 @@ namespace WpfApplication1
 
             for(var i = 0; i<666; i++)
             {
-                Balloon newBalloon = new Balloon(canvas, 20);
+                Balloon newBalloon = new Balloon(canvas, rndGen.Next(1,50), rndGen.Next(300), rndGen.Next(300));
                 balloons.Add(newBalloon);
             }
         }
@@ -38,8 +39,12 @@ namespace WpfApplication1
             canvas.Children.Clear();
             for (var i = 0; i < 666; i++)
             {
-                Balloon newBalloon = new Balloon(canvas, 20);
+                Balloon newBalloon = new Balloon(canvas, rndGen.Next(1, 50), rndGen.Next(300), rndGen.Next(300));
                 balloons.Add(newBalloon);
+                if (i % 3 == 0)
+                {
+                    newBalloon.Colour = Brushes.Black;
+                }
             }
         }
 
