@@ -31,6 +31,11 @@ namespace WpfApplication1
             {
                 Balloon newBalloon = new Balloon(canvas, rndGen.Next(1,50), rndGen.Next(300), rndGen.Next(300));
                 balloons.Add(newBalloon);
+                newBalloon.Text = "Happy Valentine's Day";
+                if (i % 3 == 0)
+                {
+                    newBalloon.Colour = Brushes.Black;
+                }
             }
         }
 

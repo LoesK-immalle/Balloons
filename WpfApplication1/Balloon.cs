@@ -18,6 +18,7 @@ namespace WpfApplication1
         private int y = 100;
         private int diameter = 10;
         private int fontSize = 1;
+        private string text = "Happy Birthday!";
 
         private Brush BackgroundBrush = new SolidColorBrush(Colors.Aquamarine);
 
@@ -25,21 +26,8 @@ namespace WpfApplication1
         TextBlock TxtBlck = new TextBlock();
 
 
-        public Balloon(Canvas canvas)
-        {
-            UpdateEllipse();
-            canvas.Children.Add(ellipse);
-            canvas.Children.Add(TxtBlck);
-        }
-
-        public Balloon(Canvas canvas, int diameter)
-        {
-            this.diameter = diameter;
-
-            UpdateEllipse();
-            canvas.Children.Add(ellipse);
-            canvas.Children.Add(TxtBlck);
-        }
+        public Balloon(Canvas canvas, int diameter) : this(canvas, diameter, 10, 10)
+        {   }
 
         public Balloon(Canvas canvas, int diameter, int yCoord, int xCoord)
         {
@@ -60,7 +48,7 @@ namespace WpfApplication1
             ellipse.Stroke = new SolidColorBrush(Colors.DeepPink);
             ellipse.Fill = BackgroundBrush;
 
-            TxtBlck.Text = "Happy Birthday!";
+            TxtBlck.Text = text;
             TxtBlck.Height = diameter;
             TxtBlck.Width = diameter;
             TxtBlck.Margin = new Thickness(x + diameter / 4, y + diameter / 2, 0, 0);
@@ -101,6 +89,16 @@ namespace WpfApplication1
                 UpdateEllipse();
             }
         }
-
+        public string Text
+        {
+            get
+            {
+                return text;
+            }
+            set
+            {
+                TxtBlck.Text = value;
+            }
+        }
     }
 }
